@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  transition: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* @keyframes toggleBackground {
+  0%, 100% {
+    background-image: url('./img/1.png');
+  }
+  50% {
+    background-image: url('./img/2.png');
+  }
+} */
+
+.button{
+    margin-top: 25vh;
+    margin-left: 25vw;
+
+    padding: 2rem 3rem;
+    font-size: 30px;
+}

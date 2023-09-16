@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import ButtonOn from "./ButtonOn";
+import ButtonOff from "./ButtonOff";
 
 function App() {
+  const [isOn, setIsOn] = useState(false);
+
+  useEffect(() => {
+    const switcher = setInterval(() => {
+      setIsOn(!isOn);
+      console.log("switching");
+    },1000);
+    return () => {
+      clearInterval(switcher);
+    };
+  }, [isOn]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="App"
+      style={{ backgroundImage: `url('./img/${isOn ? "1" : "2"}.png')` }}
+    >
+      <ButtonOn isOn={isOn} />
+      <ButtonOff isOn={isOn} />
     </div>
   );
 }

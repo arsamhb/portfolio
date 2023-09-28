@@ -5,7 +5,7 @@ const ButtonOn = ({ isOn }) => {
     <button
       className='button'
       style={{ backgroundColor: `${isOn ? '#000' : '#fff'}`, color: `${isOn ? '#fff' : '#000'}` }}>
-      ButtonOn
+      Portfolio
     </button>
   )
 }
